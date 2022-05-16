@@ -8,11 +8,11 @@ let board = [
 let count = 0;
 
 const update = () => {
-  var id = event.srcElement.id;
-  var btn = document.getElementById(id);
+  let id = event.srcElement.id;
+  let btn = document.getElementById(id);
 
-  var row = id.slice(3, 4);
-  var column = id.slice(4);
+  let row = id.slice(3, 4);
+  let column = id.slice(4);
 
   if (count % 2 === 0) {
     btn.innerHTML = 'X'
@@ -30,15 +30,15 @@ const update = () => {
 
 const check = (count) => {
   // check rows
-  for (var i = 0; i < board.length; i++) {
-    if (board[i][0] === board[i][1] && board[i][1] === board[i][2]) {
+  for (let row = 0; row < board.length; row++) {
+    if (board[row][0] === board[row][1] && board[row][1] === board[row][2]) {
 
-      if (board[i][0] === 'X') {
+      if (board[row][0] === 'X') {
         alert('Player X wins!');
         reset();
       }
 
-      if (board[i][0] === 'O') {
+      if (board[row][0] === 'O') {
         alert('Player Y wins!');
         reset();
       }
@@ -46,7 +46,7 @@ const check = (count) => {
   }
 
   // check columns
-  for (var col = 0; col < board.length; col++) {
+  for (let col = 0; col < board.length; col++) {
     if (board[0][col] === board[1][col] && board[1][col] === board[2][col]) {
 
       if (board[0][col] === 'X') {
@@ -97,9 +97,9 @@ const check = (count) => {
 }
 
 const reset = () => {
-  var allButtons = document.getElementsByClassName('btn');
+  let allButtons = document.getElementsByClassName('btn');
 
-  for (var i = 0; i < allButtons.length; i++) {
+  for (let i = 0; i < allButtons.length; i++) {
     allButtons[i].innerHTML = '_';
   }
 
