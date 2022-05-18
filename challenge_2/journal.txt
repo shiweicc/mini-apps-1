@@ -1,0 +1,39 @@
+- SET UP:
+  - npm init -> create package.json to store all the dependencies
+  - install express
+  - install nodemon
+  - use app.use() -> to serve up index.html and its static assets
+
+- CLIENT APP:
+  - be able to submit JSON data to the server (POST request)
+  - using HTML FORM with a signle textarea input field
+  - a submit button
+  - * DO NOT use jQuery/AJAX functions in the submission process.The form submission process should use the default browser action/behavior.
+
+  - recevie response containning a CSV-formatted result (GET request)
+  - the response contain the CSV report along with the form so the user can keep submitting indefinitely, without having to go back to the "form page".
+  - * DO NOT USE jQuery/AJAX. You may use the supplied examples of JSON and CSV for testing and verification.
+
+- CLIENT & SERVER:
+  - * Implement report generation logic on the server
+    - client: use jQuery
+    - server: use middleware eg: bodyParser
+
+- FOLDERS
+  - server.js - server app
+  - client folder - client app (app.js and index.html)
+
+- REFACTOR:
+  1. refactor your form to use a file picker instead of a textarea. Continue to use the browser's default action. DO NOT USE jQuery/AJAX.
+
+  2. refactor to a single page application by using jQuery/AJAX to submit your JSON file to the server using AJAX.
+    - * You will know the page is reloading if you see a change in your URL. You must prevent this behavior from occurring.
+
+  3. Add a link to download the most recently created CSV report.
+    - You can choose to make this a server-based or client-based action.
+
+Client POST/GET request:
+client -> controller -> model
+
+Server response:
+client <- controller <- model
