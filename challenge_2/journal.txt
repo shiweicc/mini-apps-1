@@ -37,3 +37,9 @@ client -> controller -> model
 
 Server response:
 client <- controller <- model
+
+- How to connect client to the server?
+  app.use(express.static('client')); // connect client to the server
+  app.use(bodyParser.json()); // to support JSON-encoded bodies (parsing the incoming request bodies in a middlewaer before you handle it)
+  app.use(bodyParser.urlencoded({extended: true})); // to support URL-encoded bodies
+  app.use(cors()) // Cross-Origin Resource Sharing: allow front-end and back-end share data on different servers
