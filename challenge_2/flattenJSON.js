@@ -41,7 +41,6 @@ const helper = (obj) => {
   str = str.slice(0, -1) + '\n';
 
   if (Array.isArray(obj.children) && obj.children.length > 0) {
-
     obj.children.forEach((child) => {
       str += helper(child);
     })

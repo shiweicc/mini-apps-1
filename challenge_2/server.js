@@ -5,6 +5,9 @@ const cors = require('cors')
 const hostname = "127.0.0.1";
 const port = 3000;
 const flatten = require ('./flattenJSON');
+const fs = require('fs');
+const path = require('path');
+
 
 // app.set('view engine', 'ejs');
 app.use(express.static('client'));
@@ -17,12 +20,23 @@ app.get('/', function(req, res) {
   res.send('Hello World!')
 });
 
-app.post('/upload_json', function(req, res) {
+
+app.post('/', function(req, res) {
 
   let data = JSON.parse(req.body.input);
-  let csvObj = flatten(data);
+  let csv = flatten(data);
 
-  res.send(csvObj);
+  const filePath = path.join(__dirname, 'csvReports');
+
+  fs.writeFile(filePath + '/csvReoprt.csv', csv, (err) => {
+    if (err) {
+      console.log('Cannot write the csv report!');
+    } else {
+      console.log('Writting the csv report succefully!');
+    }
+  })
+
+  res.redirect('/');
 })
 
 // Start server on a specified port
