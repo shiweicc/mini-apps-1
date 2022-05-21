@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 const hostname = "127.0.0.1";
 const port = 3000;
+const flatten = require ('./flattenJSON');
 
 // app.set('view engine', 'ejs');
 app.use(express.static('client'));
@@ -17,7 +18,11 @@ app.get('/', function(req, res) {
 });
 
 app.post('/upload_json', function(req, res) {
-   res.send(req.body.input);
+
+  let data = JSON.parse(req.body.input);
+  let csvObj = flatten(data);
+
+  res.send(csvObj);
 })
 
 // Start server on a specified port

@@ -40,7 +40,7 @@ const helper = (obj) => {
 
   str = str.slice(0, -1) + '\n';
 
-  if (obj.children.length > 0) {
+  if (Array.isArray(obj.children) && obj.children.length > 0) {
 
     obj.children.forEach((child) => {
       str += helper(child);
@@ -49,3 +49,5 @@ const helper = (obj) => {
 
   return str;
 }
+
+module.exports = flatten;
