@@ -9,11 +9,12 @@
     <h1>🌞 CSV Report Generator 🌞</h1>
 
     <!-- Form which will send a POST request to the current URL -->
-    <form id='form' action="/" method="post">
+    <form id='form' action="/" method="post" enctype="multipart/form-data">
       <label>
-        <input id='inputID' type="text" name="input">
+        <!-- <input type="text" id='inputID' name="input"> -->
+        <input type="file" id="fileID" name="uploaded_file" multiple>
       </label> <br><br>
-      <button id='btnID' type="sumbit">Submit</button>
+      <button type="sumbit" id='btnID'>Submit</button>
     </form>
 
     <script src="app.js"></script>
