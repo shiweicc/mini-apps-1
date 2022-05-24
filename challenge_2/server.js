@@ -25,18 +25,18 @@ app.get('/', (req, res) => {
 // POST request to submit JSON file
 /***Using express-fileupload***/
 app.post('/upload_json', (req, res) => {
-  console.log('req.files', req.files.uploaded_file);
-  console.log('here:', JSON.parse(req.files.uploaded_file.data));
+  // console.log('req.files', req.files.uploaded_file);
+  // console.log('here:', JSON.parse(req.files.uploaded_file.data));
 
   if (!req.files) {
     return res.status(400).send("No files were uploaded.");
   }
 
-  var filePath = path.join(__dirname, 'csvReports');
-  var csv = flatten(JSON.parse(req.files.uploaded_file.data));
+  const filePath = path.join(__dirname, 'csvReports');
+  const csv = flatten(JSON.parse(req.files.uploaded_file.data));
 
 
-  fs.writeFile(filePath + '/csvReoprt.csv', csv, (err) => {
+  fs.writeFile(filePath + '/csvReport.csv', csv, (err) => {
     if (err) {
       console.log('Error writing csv report!');
       return;
@@ -47,6 +47,17 @@ app.post('/upload_json', (req, res) => {
   })
 
 });
+
+app.get('/upload_json', (req, res) => {
+  const filePath = path.join(__dirname, 'csvReports');
+
+  res.download(filePath + '/csvReport.csv', (err) => {
+    if(err) {
+      console.log('Error: ', err);
+    }
+  });
+});
+
 
 
 // Start server on a specified port

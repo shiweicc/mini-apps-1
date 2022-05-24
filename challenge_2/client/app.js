@@ -1,10 +1,8 @@
-
 $(document).ready(function () {
 
   $("#form").submit(function (e) {
 
     e.preventDefault();
-
     var formData = new FormData(this);
 
     $.ajax({
@@ -24,10 +22,7 @@ $(document).ready(function () {
       },
 
     });
-
   });
-
-
 });
 
 
