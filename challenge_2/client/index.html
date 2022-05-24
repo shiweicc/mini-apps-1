@@ -14,12 +14,15 @@
         <!-- <input type="text" id='inputID' name="input"> -->
         <input type="file" id="fileID" name="uploaded_file" multiple>
       </label>
-      <button type="sumbit" id='btnID'>Submit</button>
-    </form> <br><br>
+
+      <button type="sumbit" id='btnID'>Submit File</button>
+    </form><br>
 
     <form action="/upload_json" method="get">
-      <button type="submit">Download</button>
-  </form>
+      <button type="submit">Download CSV Report</button>
+    </form>
+
+    <div id="showCSV"></div>
 
     <script src="app.js"></script>
   </body>

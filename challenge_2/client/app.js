@@ -3,6 +3,7 @@ $(document).ready(function () {
   $("#form").submit(function (e) {
 
     e.preventDefault();
+
     var formData = new FormData(this);
 
     $.ajax({
@@ -13,16 +14,18 @@ $(document).ready(function () {
       contentType: false,
       enctype: 'multipart/form-data',
 
-      success: function(data) {
+      success: (data) => {
         console.log('Ajax process sucess!');
      },
 
-      error: function() {
+      error: () => {
         console.log('Ajax process error!');
       },
 
     });
   });
+
+
 });
 
 
