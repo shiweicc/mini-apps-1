@@ -56,7 +56,7 @@ class App extends React.Component {
 const Form1 = (props) => {
   return (
     <div>
-      <p>Please fill out Form #1:</p>
+      <h3>Please fill out Form #1:</h3>
       <form>
         <label htmlFor="name">Enter your fullname: </label>
           <input type="text" name="name" id="name" required />
@@ -82,7 +82,7 @@ const Form1 = (props) => {
 const Form2 = (props) => {
   return (
     <div>
-      <p>Please fill out Form #2:</p>
+      <h3>Please fill out Form #2:</h3>
       <form>
         <label htmlFor="address_line1">Enter your address: </label>
           <input type="text" name="address_line1" id="address_line1" required />
@@ -110,7 +110,7 @@ const Form2 = (props) => {
 const Form3 = (props) => {
   return (
     <div>
-      <p>Please fill out Form #3:</p>
+      <h3>Please fill out Form #3:</h3>
       <form>
         <label htmlFor="credit_card_num">Enter your credit card number: </label>
           <input type="text" name="credit_card_num" id="credit_card_num" required />
